@@ -1,45 +1,65 @@
 header {
-    display: flex;  /* 要素を横一列に並べるためのflexboxを使う */
-    justify-content: space-between;  /* <h1>要素と<ul>要素の間にスペースを開ける */
-    align-items: center;  /* 縦方向に中央揃えする */
-    padding: 0 10px;  /* ヘッダー要素全体に余白を設定 */
-    height: 70px;  /* headerの縦サイズを指定 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    height: 70px;
     background-color: rgb(127, 255, 187);
-  }
-  
-  .head_ul {
-    display: flex;  /* <li>要素を横一列に並べるためのflexboxを使う */
-    list-style: none;  /* 点を表示しないようにする */
-    margin: 0;  /* <ul>要素の余白を0にする */
-    padding: 0;  /* <ul>要素の余白を0にする */
-  }
-  
-  .head_li{
-    margin: 0 10px;  /* <li>要素の間隔を均等にする */
-  }
-  
-  a {
-    display: block;  /* <a>要素をブロック要素にすることで、横一列に並べるための幅を設定することができる */
-    padding: 10px;  /* リンク文字の余白を設定 */
-    text-decoration: none;  /* 下線を表示しないようにする */
-    color: #3420ed;  /* リンク文字の色を指定 */
-  }
+}
 
-body {
-    margin: 0;  /* ヘッダーの余白をなくすスタイル */
-  }
- 
-  /* レスポンシブデザインの設定 */
+.toggle-menu {
+    display: none;
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #3420ed;
+}
+
 @media screen and (max-width: 600px) {
     header {
-    flex-direction: column;
-    height: auto;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px;
     }
-    .head_ul {
-    flex-direction: column;
-    margin-top: 10px;
+    
+    .toggle-menu {
+        display: block;
+        order: 1;
     }
-    .head_li{
-    margin: 10px 0;
+    
+    nav {
+        width: 100%;
+        display: none;
     }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
     }
+    
+    nav li {
+        margin: 10px 0;
+    }
+    
+    .show-menu {
+        display: block;
+    }
+}
