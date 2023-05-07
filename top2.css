@@ -1,65 +1,254 @@
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    height: 70px;
-    background-color: rgb(127, 255, 187);
+html{
+    font-size: 100%; /* 16pxの事 */
 }
 
-.toggle-menu {
-    display: none;
-    font-size: 24px;
-    border: none;
-    background: none;
-    cursor: pointer;
+body{
+    color: #24292e;
+    font-family: "Sawarabi Gothic";
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav li {
-    margin: 0 10px;
-}
-
-nav a {
-    display: block;
-    padding: 10px;
+a{
     text-decoration: none;
-    color: #3420ed;
 }
 
-@media screen and (max-width: 600px) {
-    header {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 10px;
-    }
-    
-    .toggle-menu {
-        display: block;
-        order: 1;
-    }
-    
-    nav {
-        width: 100%;
-        display: none;
-    }
-    
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    nav li {
-        margin: 10px 0;
-    }
-    
-    .show-menu {
-        display: block;
-    }
+/* remは、ルート要素(通常はHTML要素)のフォントサイズを基準とした相対的な値を表します。
+つまりこのCSSコードはp要素のテキストのフォントサイズをルート要素のフォントサイズの1.3倍に設定することを意味します。
+例えばルート要素のフォントサイズが16ピクセルの場合、'1.3は20.8ピクセルになります（16 * 1.3 = 20.8）*/
+/* デフォルト(今回16px)を変えれば自動で全て変わる為改修が楽 */
+p{
+    font-size: 1.3rem;
 }
+
+img{
+    max-width: 100%;
+}
+
+li{
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+.wrapper{
+    max-width: 960px;
+    margin: 0 auto 130px auto;
+    font-size: 0.9rem;
+    padding: 0 4%;
+}
+
+.site-title{
+    /* 行の高さ */
+    line-height: 1px;
+    /* 文字の太さ */
+    font-weight: 600;
+    font-size: 2.4rem;
+}
+
+.site-title a{
+    color: #24292e;
+    /* display: block ; */
+}
+
+.sec-title{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 65px;
+}
+
+
+/*-----------------
+ ヘッダー部分のCSS 
+ ------------------*/
+#header{
+    /* 幅の最大が960pxという事 */
+    max-width: 960px;
+    /* ヘッダーという親要素に含まれている子要素が横並びになる意味 */
+    /* 今回はh1とnavタグ */
+    /* flex-direction: clumnにすると縦並びになる */
+    display: flex;
+    /* 交差軸に対して中央になる */
+    align-items: center;
+    /* 画面の中央へ寄せる */
+    /* justify-content: center; */
+    /* 画面の端と端に寄せる */
+    justify-content: space-between;
+    /* 上下左右のマージンを自動的に計算して、要素を中央に配置することを意味します。 */
+    margin: 0 auto;
+    padding: 0 4%;
+    height: 170px;
+}
+
+#header ul{
+    display: flex;
+    padding: 10px 0;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+#header ul li{
+    font-size: 0.9rem;
+    margin-left: 30px;
+}
+
+#header ul li a{
+    color: #24292e;
+    /* 透明になる速度を制御 */
+    transform: all 4s;
+}
+
+/* URLにマウスを持ってきた際の動き */
+#header ul li a:hover{
+/* 透明度を半分にする */
+    opacity: 0.5;
+}
+
+#header li img.icon{
+    width: 30px;
+}
+
+
+
+/*------------- 
+      main
+--------------- */
+
+#main{
+    margin-bottom: 80px;
+}
+
+#main img{
+    width: 100%;
+    max-width: 1920px;
+    height: 400px;
+    /* アスペクト比を保持しながら、コンテナーにピッタリと収まるように拡大・縮小すること */
+    object-fit: cover;
+}
+
+
+
+/* --------------
+      about 
+----------------*/
+#about ul{
+    margin-bottom: 30px;
+}
+
+#about ul li{
+    margin-bottom: 3px;
+}
+
+/* #about ul li:first-child =about内ul内liの中で一番上の奴を指定 */
+#about ul li:first-child{
+    margin-bottom: 30px;
+}
+
+
+/*-------------------
+      works
+--------------------- */
+#works ul{
+    /* 画像を横並びにする */
+    display: flex;
+    /* 横並びにした画像を折り返す */
+    flex-wrap: wrap;
+    /* 左右均等に余白を基に間隔をあける */
+    justify-content: space-between;
+}
+
+#works ul li{
+    width: 31%;
+    margin-bottom: 23px;
+}
+
+#works ul li img{
+    cursor: pointer;    
+}
+
+#works ul li img:hover{
+    transform: scale(1.2, 1.2);
+    /* opacity: 0.7; =透明度制御 */
+    opacity: 0.7;
+    /* transition: all 0.3s; =拡大する時間を制御 */
+    transition: all 0.3s;
+}
+
+/*-------------------
+        news
+--------------------- */
+#news dl{
+    display: flex;
+    flex-wrap: wrap;
+    /* news下の下線部 */
+    border-top: 1px solid #c8c8c8;
+    margin-bottom: 20px;
+}
+
+#news dt{
+    width: 20%;
+    border-bottom: 1px solid #c8c8c8;
+    padding: 15px;
+}
+
+#news dd{
+    width: 80%;
+    border-bottom: 1px solid #c8c8c8;
+    padding: 15px;
+}
+
+/*-------------------
+　スマートフォン全体
+--------------------- */
+/* @media screen and (max-width: 600px) =幅が600px以下になった際にこのCSSを適応するという意味 */
+@media screen and (max-width: 600px){
+    .site-title{
+        margin-top: 20px;
+    }
+    /* header */
+    #header{
+        flex-direction: column;
+        height: auto;
+        line-height: 40px;
+        margin-top: 20px;
+    }
+
+    #heade li{
+        font-size: 0.8rem;
+        margin-right: 20px;
+    }
+    #header li img.icon{
+        width: 20px;
+        margin-top: 15px;
+    }
+
+    /* -----------------
+      スマホ・works部分
+    -------------------- */
+    #works ul{
+        /* スマホの場合３X３表示だったのを縦表示へ変える */
+        flex-direction: column;
+    }
+
+    #works ul li{
+        width: 100%;
+    }
+
+    /* -----------------
+      スマホ・news部分
+    -------------------- */
+    #news dl{
+        flex-direction: column;        
+     }
+
+     #news dt{
+        width: 100%;
+        border-bottom: none;
+        padding-bottom: 0;       
+     }
+
+     #news dd{
+        width: 100%;
+        padding-top: 0;  
+     }
+ 
+}
+
+    
