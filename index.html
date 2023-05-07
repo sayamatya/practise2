@@ -2,23 +2,105 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="top2.css">
-    <title>久しぶりの作成練習</title>
+    <!--  <meta name="descripyion" content="〇〇">　⇐ウェブ検索時、ウェブ名の下に出て来るウェブの説明みたいなもの -->
+    <meta name="descripyion" content="LPの練習">
+    <!-- 各種ブラウザの初期設定されているCSSをリセット、打ち消すためのもの、CDNの場合のURL -->
+    <!-- CDNについては後程ググる -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>LPの練習</title>
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>久しぶりのHP作成</h1> 
-        <button class="toggle-menu">&#9776;</button>
+    <header id="header">
+        <h1 class="site^taitle">
+            <a href="#">ShinCode</a>
+        </h1>
         <nav>
             <ul>
-                <li><a href="C:\Users\sato0\Desktop\html_BK\仮作成\top\top.html">オクダハウジングBKへ</a></li>
-                <li><a href="C:\Users\sato0\Desktop\html_BK\仮作成\profile\profile.html">オクダハウジング概要へ</a></li>
-                <li><a href="C:\Users\sato0\Desktop\html_BK\仮作成\contact\contact.html">問い合わせホーム</a></li>
+                <li><a href="#abaut">Aboutt</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Cntact</a></li>
+                <li>
+                    <!-- a href="URL" target="_blank">　⇐target、blankでURLを別タブで開けるようになる　 -->
+                    <!-- rel="noopener noreerrer"は飛んだ先のサイトから、どのサイトから飛んできたかを公開しない、隠す意味がある -->
+                    <a 
+                    href="https://www.Twitter.com" 
+                    target="_blank"
+                    rel="noopener noreerrer"
+                    ><img src="lp-html-css-tutorial-pc-sp-main/img/twitter.png" alt="Twitter" class="icon"></a>
+                </li>
             </ul>
         </nav>
+
+
+
     </header>
-    
+
+    <div id="main">
+        <!-- <picture> =画像をレシポンシブに対応させるためのタグ -->
+        <picture>
+            <source media="(max-width: 600px)" srcset="lp-html-css-tutorial-pc-sp-main/img/main-sp.jpg" />
+            <img src="lp-html-css-tutorial-pc-sp-main/img/main-pc.jpg" alt="" />
+        </picture>
+    </div>
+
+    <!-------------- 
+        aboutの部分 
+    ---------------->
+    <section id="about" class="wrapper">
+    <h2 class="sec-title">About</h2>
+    <ul>
+        <!-- シフト＋ALT＋↓で行コピー -->
+        <li>ShinCode株式会社</li>
+        <li>ウェブ会社として設立</li>
+        <li>webサイト・アプリ開発を承ります</li>
+        <li>メールアドレス：xxxxxxx@xxx.com</li>
+    </ul>
+    <p>Webサイト制作やアプリ開発を得意としています。また、Web講師としても活動しており新人の育成をしたい企業も申し込み承ります。</p>
+    </section>
+
+    <!-------------- 
+        worksの部分 
+     ---------------->
+    <section id="works" class="wrapper">
+        <h2 class="sec-title">Works</h2>
+        <ul>
+            <li><img src="lp-html-css-tutorial-pc-sp-main/img/works1.jpg" alt="works1" /></li>
+            <li><img src="lp-html-css-tutorial-pc-sp-main/img/works2.jpg" alt="works2" /></li>
+            <li><img src="lp-html-css-tutorial-pc-sp-main/img/works3.jpg" alt="works3" /></li>
+            <li><img src="lp-html-css-tutorial-pc-sp-main/img/works4.jpg" alt="works4" /></li>
+            <li><img src="lp-html-css-tutorial-pc-sp-main/img/works5.jpg" alt="works5" /></li>
+            <li><img src="lp-html-css-tutorial-pc-sp-main/img/works6.jpg" alt="works6" /></li>
+            <li><img src="lp-html-css-tutorial-pc-sp-main/img/works3.jpg" alt="works3" /></li>
+            <li><img src="lp-html-css-tutorial-pc-sp-main/img/works4.jpg" alt="works4" /></li>
+            <li><img src="lp-html-css-tutorial-pc-sp-main/img/works1.jpg" alt="works1" /></li>
+        </ul>
+    </section>
+    <!-------------- 
+        newsの部分 
+     ---------------->
+     <section id="news" class="wrapper">
+        <h2 class="sec-title">News</h2>
+        <!-- <dl>タグ＝説明リストの際に使うものみたいな感じ -->
+        <dl>
+            <dt>2022/10/29</dt>
+            <dd>本サイトをリリース</dd>
+            <dt>2022/10/29</dt>
+            <dd>プログラミングチュートリアルの運営を開始しました。</dd>
+            <dt>2022/10/29</dt>
+            <dd>【チャンネル登録】よろしくお願いいたします。</dd>
+            <dt>2022/10/29</dt>
+            <dd>ShinCodeが鬱病を発症しました。動画投稿が遅れます。</dd>
+            <dt>2022/10/29</dt>
+            <dd>ShinCodeの鬱病が少し改善しました。再発予防が大事です。</dd>
+
+        </dl>
+     </section>
+
+
+
 </body>
 </html>
